@@ -13,6 +13,8 @@
 <body>
 
 <h1>Home page</h1>
+<h2>Hello ${name}</h2>
+<h2>My city is: ${city}</h2>
 
 </body>
 </html>
