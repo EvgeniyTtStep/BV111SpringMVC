@@ -43,15 +43,18 @@ public class MyController {
         return "form";
     }
 
-    @PostMapping("/form") //@ModelAttribute
-    public String postForm(@RequestParam(value = "name")String name,
-                           @RequestParam(value = "email")String email,
-                           @RequestParam(value = "phone")String phone){
-        students.add(new Student(name, email,phone));
+//    @PostMapping("/form") //@ModelAttribute
+//    public String postForm(@RequestParam(value = "name")String name,
+//                           @RequestParam(value = "email")String email,
+//                           @RequestParam(value = "phone")String phone){
+//        students.add(new Student(name, email,phone));
+//
+//        return "redirect:/students";
+//    }
 
+    @PostMapping("/form") //@ModelAttribute
+    public String postForm(@ModelAttribute Student student){
+        students.add(student);
         return "redirect:/students";
     }
-
-
-
 }

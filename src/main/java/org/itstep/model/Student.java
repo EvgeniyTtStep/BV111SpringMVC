@@ -1,6 +1,10 @@
 package org.itstep.model;
 
-public class Student {
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student  implements IStudent{
     private String name;
     private String email;
     private String phone;
@@ -36,5 +40,10 @@ public class Student {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String study() {
+        return "Student";
     }
 }
