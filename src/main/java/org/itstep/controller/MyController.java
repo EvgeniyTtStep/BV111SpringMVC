@@ -38,7 +38,7 @@ public class MyController {
     }
 
 
-    @GetMapping("/form")
+    @GetMapping("/form_v1")
     public String getForm(){
         return "form";
     }
@@ -52,7 +52,7 @@ public class MyController {
 //        return "redirect:/students";
 //    }
 
-    @PostMapping("/form") //@ModelAttribute
+    @PostMapping("/form_v1") //@ModelAttribute
     public String postForm(@ModelAttribute Student student){
         students.add(student);
         return "redirect:/students";
