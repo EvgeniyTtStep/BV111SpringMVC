@@ -24,4 +24,21 @@ public class StudentService {
     public List<Student> getAll() {
         return studentDAO.getAll();
     }
+
+    public Student getById(Integer idStudent) {
+        if (idStudent != null) {
+            return studentDAO.getById(idStudent);
+        }
+        return null;
+    }
+
+    public void updateStudent(Student student) {
+        studentDAO.update(student);
+    }
+
+    public void deleteStudent(Integer idStudent) {
+        if(idStudent!=null){
+            studentDAO.delete(idStudent);
+        }
+    }
 }

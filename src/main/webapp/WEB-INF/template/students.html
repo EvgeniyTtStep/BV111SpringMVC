@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Students</h1>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    <tr th:each="student: ${students}">
+        <td th:text="${student.studentId}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.phone}"></td>
+        <td><a th:href="@{/update/student/{idStudent}(idStudent=${student.getStudentId()})}">Update</a></td>
+        <td><a th:href="@{/del/student/{idStudent}(idStudent=${student.getStudentId()})}">Delete</a></td>
+    </tr>
+</table>
+
+<div th:if="${students.isEmpty()}">
+    <a th:href="@{/form}">Add a new student</a>
+</div>
+
+<div th:if="${!students.isEmpty()}">
+    <a th:href="@{/form}">Add another student</a>
+</div>
+
+</body>
+</html>
